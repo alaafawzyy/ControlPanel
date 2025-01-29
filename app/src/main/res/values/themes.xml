@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ControlPanel" parent="android:Theme.Material.Light.NoActionBar">
+
+
+        <!-- لون النص والأيقونات في شريط الحالة (ذهبي) -->
+        <item name="android:windowLightStatusBar">true</item> <!-- أيقونات داكنة -->
+    </style>
+</resources>

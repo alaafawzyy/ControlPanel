@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "994626391659",
+    "project_id": "todvpn-faf07",
+    "storage_bucket": "todvpn-faf07.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994626391659:android:b9285c16f6dc5caac56b2e",
+        "android_client_info": {
+          "package_name": "co.gulf.todvpn.vpn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChHXPQ9VJgbthjw3WtIWR073gLWr7vJfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994626391659:android:6e3d256d2ef78e19c56b2e",
+        "android_client_info": {
+          "package_name": "com.example.controlpanel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChHXPQ9VJgbthjw3WtIWR073gLWr7vJfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
