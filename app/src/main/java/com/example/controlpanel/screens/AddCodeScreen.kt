@@ -1,5 +1,8 @@
 package com.example.controlpanel.screens
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -83,16 +86,23 @@ fun AddCodeScreen(navController: NavController) {
                     return@Button
                 }
 
-                for (i in 1..numberOfCodesInt) {
-                    val generatedCode = generateRandomCode()
-                    val id = UUID.randomUUID().toString()
+                // Generate all codes first
+                val codesList = List(numberOfCodesInt) { generateRandomCode() }
 
+                // Copy to clipboard
+                val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val clip = ClipData.newPlainText("Generated Codes", codesList.joinToString("\n"))
+                clipboard.setPrimaryClip(clip)
+                Toast.makeText(context, "${codesList.size} codes copied to clipboard", Toast.LENGTH_SHORT).show()
+
+                // Save to Firestore
+                codesList.forEach { generatedCode ->
+                    val id = UUID.randomUUID().toString()
                     val codeData = hashMapOf(
                         "id" to id,
                         "duration" to durationInt,
                         "code" to generatedCode,
-                        "isUsed" to false,
-
+                        "isUsed" to false
                     )
 
                     db.collection("codes")
@@ -105,7 +115,6 @@ fun AddCodeScreen(navController: NavController) {
                         }
                 }
 
-                code = ""
                 duration = ""
                 numberOfCodes = ""
             },
